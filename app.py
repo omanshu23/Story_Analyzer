@@ -6,8 +6,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 from textblob import TextBlob
 
-# Load the language processing model
-nlp = spacy.load("en_core_web_sm")
+# Attempt to load the spaCy model, or download it if not found
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 # Function to extract primary topics from the story
 def identify_topics(story_text, num_topics=3):
