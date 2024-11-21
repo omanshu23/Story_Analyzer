@@ -33,8 +33,8 @@ mdurl==0.1.2
 murmurhash==1.0.10
 narwhals==1.14.1
 nltk==3.9.1
-numpy==1.26.4
-packaging==23.2
+numpy==1.24.3
+packaging==23.1
 pandas==2.2.3
 pathlib_abc==0.1.1
 pathy==0.11.0
